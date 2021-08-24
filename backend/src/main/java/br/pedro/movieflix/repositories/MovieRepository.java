@@ -13,10 +13,7 @@ import java.util.Optional;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
 
-    @Query("SELECT movieObj FROM Movie movieObj INNER JOIN movieObj.genre genreObj WHERE :genre IS NULL OR :genre IN(genreObj)")
+    //@Query("SELECT movieObj FROM Movie movieObj INNER JOIN movieObj.genre genreObj WHERE :genre IS NULL OR :genre IN(genreObj)")
+    @Query("SELECT movieObj FROM Movie movieObj INNER JOIN movieObj.genre genreObj WHERE COALESCE(:genre) IS NULL OR :genre = genreObj")
     Page<Movie> findFilteredPaged(Pageable pageable, Genre genre);
-
-
-    @Query("SELECT movie FROM Movie movie JOIN FETCH movie.reviews reviews WHERE movie.id = :id")
-    Optional<Movie> findMovie(Long id);
 }

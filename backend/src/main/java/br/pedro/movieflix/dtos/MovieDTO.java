@@ -2,11 +2,14 @@ package br.pedro.movieflix.dtos;
 
 import br.pedro.movieflix.entities.Movie;
 import br.pedro.movieflix.entities.Review;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@JsonInclude(Include.NON_NULL)
 public class MovieDTO {
 
     private Long id;
