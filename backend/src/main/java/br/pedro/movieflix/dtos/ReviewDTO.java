@@ -1,26 +1,32 @@
 package br.pedro.movieflix.dtos;
 
 import br.pedro.movieflix.entities.Review;
-import br.pedro.movieflix.entities.User;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+@JsonInclude(Include.NON_NULL)
 public class ReviewDTO {
 
     private Long id;
     private String text;
-    private User user;
+    private String userId;
     private Long movieId;
 
     public ReviewDTO() {
     }
 
     public ReviewDTO(Review review){
-        this(review.getId(), review.getText(), review.getUser(), review.getMovie().getId());
+        this(review.getId(), review.getText(), review.getUser().getEmail(), null);
     }
 
-    public ReviewDTO(Long id, String text, User user, Long movieId) {
+    public ReviewDTO(String text, Long movieId){
+        this.text = text;
+        this.movieId = movieId;
+    }
+    public ReviewDTO(Long id, String text, String userId, Long movieId) {
         this.id = id;
         this.text = text;
-        this.user = user;
+        this.userId = userId;
         this.movieId = movieId;
     }
 
@@ -40,12 +46,12 @@ public class ReviewDTO {
         this.text = text;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(String userId) {
+        this.userId = userId;
     }
 
     public Long getMovieId() {

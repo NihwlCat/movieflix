@@ -158,6 +158,7 @@ public class MovieResourceIT {
     public void findAllPagedShouldReturnOrderedPageWhenMemberAuthenticated() throws Exception {
 
         String accessToken = obtainAccessToken(memberUsername, memberPassword);
+        Assertions.assertNotNull(accessToken);
 
         long countMovies = movieRepository.count();
 
@@ -176,6 +177,7 @@ public class MovieResourceIT {
     public void findAllPagedShouldReturnFilteredMoviesWhenGenreIsInformed() throws Exception {
 
         String accessToken = obtainAccessToken(visitorUsername, visitorPassword);
+
 
         ResultActions result =
                 mockMvc.perform(get("/movies?genreId=" + genreId)

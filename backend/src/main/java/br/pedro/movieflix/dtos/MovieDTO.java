@@ -1,8 +1,11 @@
 package br.pedro.movieflix.dtos;
 
 import br.pedro.movieflix.entities.Movie;
+import br.pedro.movieflix.entities.Review;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class MovieDTO {
@@ -18,7 +21,11 @@ public class MovieDTO {
 
     public MovieDTO(Movie movie) {
         this(movie.getId(), movie.getTitle(), movie.getSubtitle(), movie.getYear(), movie.getImgUrl(), movie.getSynopsis(), movie.getGenre().getId());
-        reviews.addAll(movie.getReviews().stream().map(ReviewDTO::new).collect(Collectors.toList()));
+    }
+
+    public MovieDTO(Movie movie, List<Review> reviews) {
+        this(movie);
+        this.reviews.addAll(reviews.stream().map(ReviewDTO::new).collect(Collectors.toList()));
     }
 
     public MovieDTO(Long id, String title, String subtitle, Integer year, String imgUrl, String synopsis, Long genreId) {
@@ -93,4 +100,5 @@ public class MovieDTO {
     public void setGenreId(Long genreId) {
         this.genreId = genreId;
     }
+
 }
