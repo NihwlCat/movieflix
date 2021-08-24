@@ -2,8 +2,10 @@ package br.pedro.movieflix.resources;
 
 import br.pedro.movieflix.dtos.GenreDTO;
 import br.pedro.movieflix.dtos.MovieDTO;
+import br.pedro.movieflix.dtos.ReviewDTO;
 import br.pedro.movieflix.services.GenreService;
 import br.pedro.movieflix.services.MovieService;
+import br.pedro.movieflix.services.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,7 +13,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -21,10 +26,13 @@ public class EndPoints {
 
     private final MovieService movieService;
 
+    private final ReviewService reviewService;
+
     @Autowired
-    EndPoints(GenreService genreService, MovieService movieService){
+    EndPoints(GenreService genreService, MovieService movieService, ReviewService reviewService){
         this.genreService = genreService;
         this.movieService = movieService;
+        this.reviewService = reviewService;
     }
 
     @GetMapping(value = "/genres")
@@ -47,8 +55,9 @@ public class EndPoints {
     }
 
     @PostMapping(value = "/reviews")
-    public ResponseEntity<Void> insertReview(){
-        System.out.println("/reviews");
-        return null;
+    public ResponseEntity<ReviewDTO> insertReview(@Valid @RequestBody ReviewDTO dto){
+        ReviewDTO reviewDTO = reviewService.insert(dto);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(reviewDTO.getId()).toUri();
+        return ResponseEntity.created(uri).body(reviewDTO);
     }
 }

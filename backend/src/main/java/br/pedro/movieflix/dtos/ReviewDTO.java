@@ -4,12 +4,17 @@ import br.pedro.movieflix.entities.Review;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import javax.validation.constraints.NotBlank;
+
 @JsonInclude(Include.NON_NULL)
 public class ReviewDTO {
 
     private Long id;
+
+    @NotBlank(message = "Texto é obrigatório")
     private String text;
     private String userId;
+    private UserDTO user;
     private Long movieId;
 
     public ReviewDTO() {
@@ -19,15 +24,28 @@ public class ReviewDTO {
         this(review.getId(), review.getText(), review.getUser().getEmail(), null);
     }
 
-    public ReviewDTO(String text, Long movieId){
+    public ReviewDTO(String text, Long movieId, UserDTO user){
         this.text = text;
         this.movieId = movieId;
+        this.user = user;
     }
     public ReviewDTO(Long id, String text, String userId, Long movieId) {
         this.id = id;
         this.text = text;
         this.userId = userId;
         this.movieId = movieId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public UserDTO getUser() {
+        return user;
+    }
+
+    public void setUser(UserDTO user) {
+        this.user = user;
     }
 
     public Long getId() {

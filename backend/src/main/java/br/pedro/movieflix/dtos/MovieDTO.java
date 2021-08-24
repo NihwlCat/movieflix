@@ -5,7 +5,6 @@ import br.pedro.movieflix.entities.Review;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class MovieDTO {

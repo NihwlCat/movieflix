@@ -22,13 +22,10 @@ public class MovieService {
 
     private final GenreRepository genreRepository;
 
-    private final ReviewRepository reviewRepository;
-
     @Autowired
     MovieService(MovieRepository repository, GenreRepository genreRepository, ReviewRepository reviewRepository){
         this.repository = repository;
         this.genreRepository = genreRepository;
-        this.reviewRepository = reviewRepository;
     }
 
     @Transactional(readOnly = true)
