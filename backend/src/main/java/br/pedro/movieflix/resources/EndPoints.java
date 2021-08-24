@@ -2,6 +2,8 @@ package br.pedro.movieflix.resources;
 
 import br.pedro.movieflix.dtos.GenreDTO;
 import br.pedro.movieflix.dtos.MovieDTO;
+import br.pedro.movieflix.services.GenreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +16,17 @@ import java.util.List;
 @RestController
 public class EndPoints {
 
+    private final GenreService genreService;
+
+    @Autowired
+    EndPoints(GenreService genreService){
+        this.genreService = genreService;
+    }
+
     @GetMapping(value = "/genres")
     public ResponseEntity<List<GenreDTO>> findAllGenres(){
-        System.out.println("/genres");
-        return null;
+        List<GenreDTO> objects = genreService.findAll();
+        return ResponseEntity.ok(objects);
     }
 
     @GetMapping(value = "/movies")

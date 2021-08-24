@@ -2,14 +2,9 @@ package br.pedro.movieflix.dtos;
 
 import br.pedro.movieflix.entities.Genre;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class GenreDTO {
     private Long id;
     private String name;
-    private final List<MovieDTO> movies = new ArrayList<>();
 
     public GenreDTO() {
     }
@@ -21,8 +16,6 @@ public class GenreDTO {
 
     public GenreDTO(Genre genre) {
         this(genre.getId(), genre.getName());
-
-        movies.addAll(genre.getMovies().stream().map(MovieDTO::new).collect(Collectors.toList()));
     }
 
     public String getName() {
@@ -31,10 +24,6 @@ public class GenreDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<MovieDTO> getMovies() {
-        return movies;
     }
 
     public Long getId() {
