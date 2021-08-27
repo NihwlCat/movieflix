@@ -21,4 +21,4 @@ Caminho para autenticar usuário
 
 [![](https://img.shields.io/badge/MOVIEFLIX-ALPHA-9370DB?logo=heroku&labelColor=9370DB&color=gray&style=for-the-badge)](https://nihwl-movieflix.herokuapp.com)
 
-🚀[Postman](), [Swagger Docs](https://nihwl-movieflix.herokuapp.com/swagger-ui.html)
+🚀[Postman](https://github.com/NihwlCat/movieflix/blob/master/Postman.json), [Swagger Docs](https://nihwl-movieflix.herokuapp.com/swagger-ui.html)
