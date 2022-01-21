@@ -1,0 +1,55 @@
+.navbar-container {
+    background-color: var(--principal-color);
+    height: 68px;
+    width: 100vw;
+    padding: 18px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo-text {
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.015em;
+    display: inline;
+}
+
+.navbar-userinfo > button {
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #000000;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.navbar-userinfo > p {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #000000;
+}
+
+.navbar-userinfo > span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #000000;
+    margin-right: 15px;
+}
+

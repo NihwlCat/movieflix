@@ -1,0 +1,50 @@
+.moviedetails-container {
+    width: 80%;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.moviedetails-container > img {
+    height: 315px;
+    width: 500px;
+    margin-right: 40px;
+}
+
+.moviedetails-content > h3 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;        
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+
+.moviedetails-content > span {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.025em;
+    color: var(--principal-color);
+}
+
+.moviedetails-content p:nth-child(3) {
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+
+.moviedetails-content p:nth-child(4) {
+    min-height: 250px;
+    
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+    letter-spacing: -0.015em;
+    color: #9E9E9E;
+
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 16px;
+}

@@ -1,0 +1,46 @@
+.catalog-searchbar {
+    width: 80%;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+.catalog-content {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,260px);
+    grid-gap: 30px 20px;
+    justify-content: space-between;
+}
+
+.catalog-searchbar > select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: url(~core/images/select-arrow.svg) no-repeat 95%;
+    background-color: #6C6C6C;
+    width: 260px;
+    height: 50px;
+    margin: 15px 20px;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+
+}
+
+.catalog-searchbar > select > option {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+
+.catalog-searchbar > select:focus {
+    outline: none;
+}

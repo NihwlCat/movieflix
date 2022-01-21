@@ -6,3 +6,7 @@ target/
 *.iml
 *.cmd
 mvnw
+
+# React
+node_modules/
+.vscode

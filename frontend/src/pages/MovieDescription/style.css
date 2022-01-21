@@ -1,0 +1,47 @@
+.content-section {
+    width: 80%;
+    padding: 25px 40px;
+    margin-top: 40px;
+}
+
+.review-content > span {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+    margin-left: 15px;
+}
+
+.review-content > p {
+    color: #9E9E9E;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 8px;
+
+    font-size: 16px;
+    line-height: 22px;
+    text-align: justify;
+    letter-spacing: -0.015em;
+}
+
+.input-review {
+    margin: 0;
+    display: block;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #9E9E9E;
+    padding: 17px;
+}
+
+.input-review:focus {
+    outline: none;
+}

@@ -1,0 +1,46 @@
+.moviecard-container {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+    width: 260px;
+    height: 320px;
+}
+
+.moviecard-container:hover {
+    cursor: pointer;
+    transform: scale(1.015);
+}
+
+.moviecard-container > img {
+    height: 164px;
+    width: 100%;
+}
+
+.moviecard-content {
+    padding: 10px 13px;
+}
+
+.moviecard-content > h5 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+
+.moviecard-content > span {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.025em;
+    color: #FFC700;
+}
+
+.moviecard-content > p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
