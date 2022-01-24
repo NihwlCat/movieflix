@@ -1,7 +1,7 @@
 ## Projeto MovieFlix
 > Um projeto de catálogo de filmes com serviço de autenticação 
 
-### Backend
+### 🟡 Backend
 O backend consiste em uma **API REST** com banco de dados Postgress que disponibiliza os seguintes endpoints da aplicação:
 * [GET] /genres 
 Lista todos os gêneros disponíveis
@@ -19,6 +19,19 @@ Caminho para autenticar usuário
 
 > Endereço do deploy da aplicação no Heroku
 
-[![](https://img.shields.io/badge/MOVIEFLIX-ALPHA-9370DB?logo=heroku&labelColor=9370DB&color=gray&style=for-the-badge)](https://nihwl-movieflix.herokuapp.com)
+[![](https://img.shields.io/badge/MOVIEFLIX-BACKEND-9370DB?logo=heroku&labelColor=9370DB&color=gray&style=for-the-badge)](https://nihwl-movieflix.herokuapp.com)
 
 🚀[Postman](https://github.com/NihwlCat/movieflix/blob/master/Postman.json), [Swagger Docs](https://nihwl-movieflix.herokuapp.com/swagger-ui.html)
+
+### 🟡 Frontend
+O frontend da aplicação foi construído utilizando ReactJS com Typescript.
+A regra de negócio permite que **VISITANTES** visualizem a listagem e as informações de um filme enquanto um **MEMBRO** é capaz de adicionar comentários aos filmes.
+
+#### Rotas
+* **/** - Autenticação
+* **/movies** - Listagem de filmes
+* **/movies/{id}** - Detalhes de um filme
+
+> Endereço do deploy da aplicação no Netlify
+
+[![](https://img.shields.io/badge/MOVIEFLIX-FRONTEND-FCC44C?logo=netlify&labelColor=FCC44C&color=gray&style=for-the-badge)](https://nihwl-movieflix.netlify.app)

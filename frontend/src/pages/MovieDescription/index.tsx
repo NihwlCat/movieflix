@@ -25,6 +25,8 @@ const MovieDescription = () => {
 
             makePrivateRequest({ url: '/reviews', method: 'POST', data: payload })
             .then(() => getMovieDetails())
+        } else {
+            alert('Deve haver um texto na mensagem!')
         }
     }
 
@@ -35,7 +37,6 @@ const MovieDescription = () => {
 
     useEffect(() => {
         getMovieDetails()
-        console.log("RENDERIZOU")
     }, [getMovieDetails])
 
     return <section className="section-container">
