@@ -32,6 +32,10 @@ A regra de negócio permite que **VISITANTES** visualizem a listagem e as inform
 * **/movies** - Listagem de filmes
 * **/movies/{id}** - Detalhes de um filme
 
+#### Usuários
+* Ana - **ana@gmail.com** - 123456
+* Bob - **bob@gmail.com** - 123456
+
 > Endereço do deploy da aplicação no Netlify
 
 [![](https://img.shields.io/badge/MOVIEFLIX-FRONTEND-FCC44C?logo=netlify&labelColor=FCC44C&color=gray&style=for-the-badge)](https://nihwl-movieflix.netlify.app)
